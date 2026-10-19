@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AI 技能 · 购买文案修改</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="annotated">
+    <header>
+      <div class="brand">AI 技能 · 截图总览<small>10.12 更新版</small></div>
+      <div class="header-actions">
+        <label class="toggle"
+          ><input type="checkbox" id="showMarks" checked />标出修改</label
+        ><button
+          type="button"
+          class="export-button"
+          id="exportOriginals"
+          title="导出原页面、修改后页面及订单页参考，共19张无标注图片"
+        >
+          导出原图
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="original-section">
+        <div class="section-heading">
+          <h1>原页面</h1>
+          <p>购买版本 · 原始截图</p>
+        </div>
+        <div class="original-scroll">
+          <div class="original-grid" id="originalGrid"></div>
+        </div>
+      </section>
+      <div class="section-heading">
+        <h1>修改后页面</h1>
+        <p>领取版本</p>
+      </div>
+      <div class="legend">
+        <span><i class="key"></i>文案／布局调整</span
+        ><span><i class="key removed"></i>原页面待删除价格</span
+        ><span><i class="key flow"></i>取消跳转</span>
+      </div>
+      <div class="gallery">
+        <section class="group">
+          <div class="group-title"><h2>浏览与确认</h2></div>
+          <div class="browse-shell" id="browseShell">
+            <div class="row" id="browse"></div>
+            <svg
+              class="flow-connector"
+              id="flowConnector"
+              aria-hidden="true"
+            ></svg>
+          </div>
+        </section>
+        <section class="group">
+          <div class="group-title">
+            <h2>确认页分支</h2>
+            <p>AI语音助手 · 可用设备已领取</p>
+          </div>
+          <div class="branches" id="branches"></div>
+        </section>
+        <section class="group">
+          <div class="group-title">
+            <h2>成功与应用</h2>
+            <p>区域离开提醒 · 成功结果示例</p>
+          </div>
+          <div class="row" id="success"></div>
+        </section>
+      </div>
+    </main>
+    <dialog id="imageViewer" class="viewer" aria-labelledby="viewerTitle">
+      <div class="viewer-bar">
+        <div class="viewer-heading">
+          <span id="viewerTitle"></span
+          ><span class="viewer-count" id="viewerCount"></span>
+        </div>
+        <div class="viewer-actions">
+          <button type="button" id="prevImage" aria-label="上一张">←</button
+          ><button type="button" id="nextImage" aria-label="下一张">→</button
+          ><button type="button" id="closeViewer" aria-label="关闭大图">
+            关闭 ×
+          </button>
+        </div>
+      </div>
+      <div id="viewerPane" class="viewer-pane">
+        <div id="viewerStage" class="viewer-stage"></div>
+      </div>
+    </dialog>
+    <div
+      id="exportStatus"
+      class="export-status"
+      role="status"
+      aria-live="polite"
+    ></div>
+    <script src="screens.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
